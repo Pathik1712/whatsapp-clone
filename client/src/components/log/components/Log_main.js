@@ -28,7 +28,12 @@ const Log_main = () => {
           let res = await axios.post(
             process.env.REACT_APP_URL + "login/auth",
             { email: take_input, pass: take_pass },
-            { signal: controller.signal }
+            {
+              signal: controller.signal,
+              headers: {
+                Origin: "http://localhost:3000",
+              },
+            }
           )
           if (!res.data.state) {
             set_err("invalid email or password")
