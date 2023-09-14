@@ -1,0 +1,103 @@
+.prof-main {
+  height: 100%;
+  width: 100%;
+  background-color: var(--app-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+/* ! image  */
+.prof-img {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+}
+.prof-img > img {
+  aspect-ratio: 1;
+  height: 9rem;
+  object-fit: cover;
+  object-position: center;
+}
+.prof-img > svg {
+  height: 9rem;
+}
+.prof-img > input[type="file"] {
+  display: none;
+}
+.prof-img > label {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+/* ! input */
+.prof-inp-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 1rem;
+}
+.prof-inp-container > label > svg {
+  height: 2.4rem;
+}
+.prof-inp {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid var(--log-color);
+  color: white;
+  font-size: 1.2rem;
+}
+#prof-inp-2 + label > svg {
+  display: flex;
+  fill: var(--log-color);
+  height: 1.8rem;
+  stroke: var(--app-bg);
+}
+/* ! btn  */
+.prof-main > button {
+  height: 2.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  border: none;
+  background-color: var(--log-color);
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+}
+.prof-main > button > span {
+  border-color: white;
+  border-bottom-color: transparent;
+}
+.prof-err {
+  color: crimson;
+  position: absolute;
+  font-size: medium;
+  top: 130%;
+  width: max-content;
+  opacity: 0;
+}
+.err-anm {
+  animation: err 5s 1;
+}
+@keyframes err {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    top: 10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}

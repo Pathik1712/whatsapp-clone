@@ -1,0 +1,29 @@
+/* !main navbar  */
+
+.nav_main {
+  display: grid;
+  font-family: sans-serif;
+  background-color: var(--chat-background);
+  color: rgb(175, 175, 175);
+  gap: 2rem;
+  text-transform: capitalize;
+  padding: 1.5rem 1.5rem;
+}
+
+/*!icons*/
+
+.nav-icons {
+  display: flex;
+  justify-content: space-around;
+  font-size: larger;
+  font-weight: 600;
+}
+.icon-text {
+  color: rgb(175, 175, 175);
+  text-decoration: none;
+}
+.active-icon {
+  color: var(--icons);
+  text-decoration: underline 3px solid var(--icons);
+  text-underline-offset: 8px;
+}

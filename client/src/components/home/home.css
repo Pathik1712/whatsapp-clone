@@ -1,0 +1,23 @@
+/* !home main page  */
+.home {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  background-color: black;
+}
+.home-main-section {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  width: 100%;
+  height: 100%;
+  max-width: 550px;
+  display: grid;
+  overflow: hidden;
+  grid-template-rows: 5rem 1fr 5rem;
+}
+@media (max-width: 550px) {
+  .home-main-section {
+    border: none;
+  }
+}

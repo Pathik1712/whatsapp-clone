@@ -1,0 +1,17 @@
+.loader {
+  /* position: absolute; */
+  display: inline-block;
+  aspect-ratio: 1;
+  border: 3.5px solid var(--log-color);
+  border-radius: 50%;
+  border-bottom: 3.5px solid transparent;
+  animation: loader_spin 2s infinite linear forwards;
+}
+
+@keyframes loader_spin {
+  from {
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,77 @@
+:root {
+  --app-bg: #111b21;
+  --chat-border: #d1d7db;
+  --global-gray: rgb(175, 175, 175);
+  --chat-background: rgb(39, 52, 67);
+  --icons: #1ebea5;
+  --notification: #128c7e;
+}
+.chats-main {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  background-image: url("https://e1.pxfuel.com/desktop-wallpaper/461/478/desktop-wallpaper-whatsapp-dark-whatsapp-chat-thumbnail.jpg");
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.chats-main::-webkit-scrollbar {
+  display: none;
+}
+/* !chat label */
+.chat_label {
+  color: white;
+  padding: 0.5rem 0;
+  border-bottom: 0.1px solid var(--chat-border);
+  background-color: var(--app-bg);
+  display: grid;
+  grid-template-columns: 3rem 1fr 3rem;
+  padding-left: 0.5rem;
+}
+
+.chat_profile {
+  display: grid;
+  place-items: center;
+}
+.chat_profile > img {
+  height: 2.8rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.chat_title {
+  text-transform: capitalize;
+  font-size: larger;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.chat_notification {
+  line-height: 1.3rem;
+  text-align: center;
+  margin: auto auto;
+  aspect-ratio: 1;
+  width: 1.3rem;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 600;
+  background-color: var(--icons);
+  color: var(--app-bg);
+}
+.chat_slogan {
+  font-size: small;
+  color: var(--global-gray);
+  text-transform: capitalize;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* ! null chats  */
+.chat_null {
+  color: var(--global-gray);
+  text-transform: capitalize;
+  font-size: x-large;
+  text-align: center;
+  margin-top: 50%;
+}

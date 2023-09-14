@@ -1,0 +1,91 @@
+/* ! main  */
+.add-user-main {
+  background-color: var(--app-bg);
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  position: relative;
+}
+.add-user-main::-webkit-scrollbar {
+  display: none;
+}
+
+/* ! serch bar  */
+.add-user-input {
+  caret-color: var(--notification);
+  background-color: var(--app-bg);
+  outline: none;
+  border: none;
+  width: 80%;
+  height: 2rem;
+  border-radius: 15px;
+  margin-inline: auto;
+  padding: 0.6rem;
+  color: white;
+}
+.add-user-input-div {
+  position: sticky;
+  top: 0;
+  display: grid;
+  padding-bottom: 0.8rem;
+  place-items: center;
+  background-color: var(--chat-background);
+}
+
+/* ! result  */
+.add-user-label {
+  font-family: sans-serif;
+  color: white;
+  padding: 0.5rem 0;
+  border-bottom: 0.1px solid var(--chat-border);
+  background-color: var(--app-bg);
+  display: grid;
+  grid-template-columns: 3rem 1fr 5rem;
+}
+.add-user-title {
+  overflow: hidden;
+  font-size: larger;
+  text-overflow: ellipsis;
+}
+.add-user-slogan {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: small;
+  color: var(--global-gray);
+  text-transform: capitalize;
+}
+.add-user-btn {
+  width: 70%;
+  border: 1px solid var(--icons);
+  background-color: transparent;
+  color: var(--icons);
+  border-radius: 15px;
+  text-transform: capitalize;
+  cursor: pointer;
+  height: 1.5rem;
+  align-self: center;
+  display: grid;
+  place-items: center;
+}
+.add-user-text-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 1rem;
+  overflow: hidden;
+}
+.add-user-profile {
+  margin-left: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-user-profile > img {
+  height: 2.8rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}

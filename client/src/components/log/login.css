@@ -1,0 +1,158 @@
+:root {
+  --form-label-font: 0.85rem;
+  --log-color: #20b038;
+}
+
+.log_page {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-image: url("https://i.pinimg.com/564x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg");
+}
+
+.svg > svg {
+  height: 2.6rem;
+}
+.svg > p {
+  font-family: monospace;
+  font-size: xx-large;
+  font-weight: 600;
+}
+.svg {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.svg > .form_p {
+  font-size: 1rem;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  font-weight: 400;
+  width: 100%;
+  border-bottom: 1px solid grey;
+  text-align: center;
+}
+
+.log_form {
+  height: 32rem;
+  aspect-ratio: 9/12;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem 2rem;
+  padding-top: 1rem;
+  box-shadow: 5px 0px 15px gray;
+  background-color: white;
+}
+
+.log_inp_div {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.log_symbol {
+  display: flex;
+  height: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  aspect-ratio: 1;
+  background-color: rgba(128, 128, 128, 0.364);
+}
+.log_symbol > svg {
+  height: 1.2rem;
+}
+.log_wrap {
+  width: 100%;
+  position: relative;
+}
+.log_inp {
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #000;
+  padding-bottom: 5px;
+}
+.log_wrap > label {
+  font-size: var(--form-label-font);
+  left: 3%;
+  top: 0;
+  position: absolute;
+  font-family: sans-serif;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.log_inp:not(:placeholder-shown).log_inp:not(:focus) ~ label,
+.log_inp:focus ~ label {
+  top: -60%;
+  font-size: 0.75rem;
+}
+.log_inp:focus {
+  border-color: var(--log-color);
+}
+.log_inp:focus ~ label {
+  color: var(--log-color);
+}
+
+.log_btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  border: none;
+  background-color: transparent;
+  font-size: 1.4rem;
+  color: var(--log-color);
+  border: 3.5px solid var(--log-color);
+  text-transform: capitalize;
+  border-radius: 50px;
+  width: 50%;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 5px 0;
+}
+
+.log_link {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.log_link > span {
+  color: var(--log-color);
+  margin-left: 5px;
+  font-weight: bold;
+}
+.log_link_wraper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.err_msg {
+  color: crimson;
+  font-size: 0.95rem;
+  text-transform: capitalize;
+  font-family: sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+@media (max-width: 450px) {
+  .log_form {
+    height: fit-content;
+    width: 90%;
+  }
+}
+@media (orientation: landscape) {
+  .log_page {
+    overflow-y: scroll;
+  }
+}
