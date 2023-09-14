@@ -31,7 +31,7 @@ const intial_data = {
 
 export const fetch_data = createAsyncThunk("data/user-data", async () => {
   try {
-    let res = await axios.post("http://localhost:3500/home/user", {
+    let res = await axios.post(process.env.REACT_APP_URL + "home/user", {
       email: get_session("email"),
     })
     return res.data

@@ -26,7 +26,7 @@ const Log_main = () => {
         set_is_loading(true)
         try {
           let res = await axios.post(
-            "http://localhost:3500/login/auth",
+            process.env.REACT_APP_URL + "login/auth",
             { email: take_input, pass: take_pass },
             { signal: controller.signal }
           )

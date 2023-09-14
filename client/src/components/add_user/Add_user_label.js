@@ -16,7 +16,7 @@ const Add_user_label = ({ item }) => {
       const fun = async () => {
         try {
           let res = await axios.post(
-            `http://localhost:3500/home/addcontacts`,
+            process.env.REACT_APP_URL + `home/addcontacts`,
             { item, id: user_data._id },
             { signal: controller.signal }
           )

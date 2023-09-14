@@ -90,7 +90,7 @@ const Text = () => {
           let read = new Blob([file])
           try {
             let res = await axios.put(
-              "http://localhost:3500/msg/file",
+              process.env.REACT_APP_URL + "msg/file",
               {
                 read,
                 room: find_user.current.user_details.email_id,
@@ -127,7 +127,7 @@ const Text = () => {
             document.getElementById("text-file-input").value = null
           } catch {}
         } else {
-          await axios.put("http://localhost:3500/msg/msg", {
+          await axios.put(process.env.REACT_APP_URL + "msg/msg", {
             room: find_user.current.user_details.email_id,
             chat_obj: {
               ...chats_obj,

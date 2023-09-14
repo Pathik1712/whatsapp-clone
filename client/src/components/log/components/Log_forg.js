@@ -61,7 +61,7 @@ const Log_forg = () => {
     document.getElementsByClassName("log_btn")[0].style.fontSize = "0"
     set_is_loading(true)
     try {
-      let result = await axios.post("http://localhost:3500/login/mail", {
+      let result = await axios.post(process.env.REACT_APP_URL + "login/mail", {
         email: get_session("email"),
         pass: pass.current,
         state,

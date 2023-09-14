@@ -15,7 +15,7 @@ const Adduser = () => {
       const handlesubmit = async () => {
         try {
           let res = await axios.post(
-            "http://localhost:3500/home/adduser",
+            process.env.REACT_APP_URL + "home/adduser",
             { email_id: take_input },
             { signal: controller.signal }
           )

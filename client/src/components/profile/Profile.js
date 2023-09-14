@@ -29,7 +29,7 @@ const Profile = () => {
         obj.append("slogan", slogan.current.value)
         obj.append("id", user_data._id)
         try {
-          await axios.patch("http://localhost:3500/home/profile", obj, {
+          await axios.patch(process.env.REACT_APP_URL + "home/profile", obj, {
             signal: controller.signal,
           })
         } catch (err) {

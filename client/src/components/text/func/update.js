@@ -8,7 +8,7 @@ export const useUpdate = (data, id, u_id, email) => {
   const last_data = useRef(0)
   let user = useMemo(() => {
     return data.user_info.find((i) => i.user_details.email_id === email)
-  }, [])
+  }, [data.user_info, email])
   const notification = data.chats.length - user.notification
   useEffect(() => {
     let count = data.chats.length
@@ -17,7 +17,7 @@ export const useUpdate = (data, id, u_id, email) => {
       last_data.current = count
       try {
         if (data.chats[count - 1].chats_from !== email) {
-          await axios.patch("http://localhost:3500/msg/rcv", {
+          await axios.patch(process.env.REACT_APP_URL + "msg/rcv", {
             count,
             id,
             u_id,

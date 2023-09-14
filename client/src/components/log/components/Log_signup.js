@@ -17,6 +17,7 @@ const Log_signup = () => {
   const [trigger, set_trigger] = useState(false)
 
   useEffect(() => {
+    let mount = true
     let source = axios.CancelToken.source()
     if (trigger) {
       const fun = async () => {
@@ -26,7 +27,7 @@ const Log_signup = () => {
           let response
           if (state !== "forgot") {
             response = await axios.post(
-              "http://localhost:3500/login/new_user",
+              process.env.REACT_APP_URL + "login/new_user",
               {
                 email: get_session("email"),
                 pass: take_pass,
@@ -35,7 +36,7 @@ const Log_signup = () => {
             )
           } else {
             response = await axios.put(
-              "http://localhost:3500/login/forgot_password",
+              process.env.REACT_APP_URL + "login/forgot_password",
               {
                 email: get_session("email"),
                 pass: take_pass,
@@ -52,14 +53,19 @@ const Log_signup = () => {
           set_err_msg(err.message)
         } finally {
           set_is_loading(false)
-          document.getElementsByClassName("log_btn")[0].style.fontSize =
-            "1.4rem"
+          if (mount) {
+            document.getElementsByClassName("log_btn")[0].style.fontSize =
+              "1.4rem"
+          }
           set_trigger(false)
         }
       }
       fun()
     }
-    return () => source.cancel("canceled")
+    return () => {
+      source.cancel("canceled")
+      mount = false
+    }
   }, [trigger])
   return (
     <main className='log_page'>
