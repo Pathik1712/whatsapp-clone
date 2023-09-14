@@ -11,16 +11,13 @@ router.post("/new_user", async (req, res) => {
   const { email, pass } = req.body
   const hash_pass = bcrypt.hashSync(pass, 10)
   try {
-    await usermodel.create({
+    const user = await usermodel.create({
       username: email,
       email_id: email,
       chats: [],
       password: hash_pass,
     })
-    let token = jwt.sign(
-      { email, pass, id: find_email._id },
-      process.env.JWT_SECRET
-    )
+    let token = jwt.sign({ email, pass, id: user._id }, process.env.JWT_SECRET)
     res.send({ state: true, token })
   } catch (err) {
     res.send({ state: false })
@@ -69,16 +66,13 @@ router.put("/forgot_password", async (req, res) => {
   const { pass, email } = req.body
   try {
     const hash_pass = await bcrypt.hash(pass, 10)
-    await usermodel.findOneAndUpdate(
+    const user = await usermodel.findOneAndUpdate(
       { email_id: email },
       { password: hash_pass }
     )
-    let token = jwt.sign(
-      { email, pass, id: find_email._id },
-      process.env.JWT_SECRET
-    )
+    let token = jwt.sign({ email, pass }, process.env.JWT_SECRET)
     res.send({ state: true, token })
-  } catch {
+  } catch (e) {
     res.send({ state: false })
   }
 })

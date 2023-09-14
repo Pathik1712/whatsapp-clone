@@ -28,7 +28,6 @@ const Adduser = () => {
       controller.abort()
     }
   }, [take_input])
-
   return (
     <main className='add-user-main'>
       <div className='add-user-input-div'>
