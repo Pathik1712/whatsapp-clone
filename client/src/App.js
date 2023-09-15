@@ -8,6 +8,7 @@ import Log_signup from "./components/log/components/Log_signup"
 import { useEffect, useState } from "react"
 
 function App() {
+  console.log(typeof process.env.REACT_APP_URL, process.env.REACT_APP_URL)
   const navigate = useLocation(),
     [trigger, set_trigger] = useState(true)
 
