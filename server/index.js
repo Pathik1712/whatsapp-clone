@@ -26,6 +26,8 @@ app.use("/msg", msg)
 
 mongoose.connect(process.env.CONNECT_STRING)
 
+app.get("/", (req, res) => res.send("hiiiii"))
+
 io.on("connection", (socket) => {
   socket.on("join", (data) => {
     socket.join(data)
