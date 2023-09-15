@@ -61,7 +61,7 @@ const Home = () => {
     }
   }, [dispatch])
   return (
-    <main className='home'>
+    <main className='home noselect'>
       {status === "success" && loc.pathname !== "/home/texts" && (
         <section className='home-main-section'>
           <Title />

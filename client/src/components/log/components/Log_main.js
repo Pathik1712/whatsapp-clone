@@ -55,7 +55,7 @@ const Log_main = () => {
   }, [trigger, navigate, take_input, take_pass])
 
   return (
-    <main className='log_page'>
+    <main className='log_page noselect'>
       <form
         className='log_form'
         onSubmit={(e) => {

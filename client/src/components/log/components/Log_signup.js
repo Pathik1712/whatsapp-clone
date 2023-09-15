@@ -68,7 +68,7 @@ const Log_signup = () => {
     }
   }, [trigger])
   return (
-    <main className='log_page'>
+    <main className='log_page noselect'>
       <form
         className='log_form'
         onSubmit={(e) => {

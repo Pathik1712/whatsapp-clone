@@ -12,7 +12,7 @@ let app = expr()
 let server = http.createServer(app)
 const io = new socketio(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://whatsapp-clone-pathik.vercel.app",
     credentials: true,
   },
   maxHttpBufferSize: 1e8,
@@ -28,7 +28,6 @@ mongoose.connect(process.env.CONNECT_STRING)
 
 app.get("/", (req, res) => {
   res.send("hiiiii")
-  console.log(typeof process.env.CONNECT_STRING, process.env.CONNECT_STRING)
 })
 
 io.on("connection", (socket) => {

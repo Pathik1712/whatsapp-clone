@@ -89,7 +89,7 @@ const Log_forg = () => {
     set_btn_txt("sent")
   }
   return (
-    <main className='log_page'>
+    <main className='log_page noselect'>
       <form
         className='log_form'
         style={{ justifyContent: "space-evenly" }}

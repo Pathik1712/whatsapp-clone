@@ -47,7 +47,6 @@ router.post("/mail", async (req, res) => {
 router.post("/auth", async (req, res) => {
   const { email, pass } = req.body
   const find_email = await usermodel.findOne({ email_id: email })
-  console.log(find_email)
   if (!find_email) {
     res.send({ state: false })
   } else {
