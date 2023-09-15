@@ -1,6 +1,6 @@
 import { io } from "socket.io-client"
 
-const socket = io("http://localhost:3500", {
+const socket = io(process.env.REACT_APP_URL, {
   autoConnect: false,
 })
 
