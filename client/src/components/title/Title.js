@@ -4,8 +4,11 @@ import "./title.css"
 import More from "../svg/More.js"
 import { useNavigate } from "react-router-dom"
 import { remove_session } from "../../func/use_session.js"
+import { useDispatch } from "react-redux"
+import { logout } from "../../data/slice/user_data.js"
 
 const Title = () => {
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   return (
     <div className='home-title'>
@@ -28,6 +31,7 @@ const Title = () => {
         >
           <li
             onClick={() => {
+              dispatch(logout())
               remove_session("email")
               remove_session("auth_token")
               navigate("/login")

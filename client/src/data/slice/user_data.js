@@ -72,6 +72,9 @@ const user_data_slice = createSlice({
         changes: entity,
       })
     },
+    logout(state) {
+      state.status = "ideal"
+    },
   },
   extraReducers(build) {
     build
@@ -100,5 +103,5 @@ export const user_error = (state) => state.user_data.error
 
 export default user_data_slice.reducer
 
-export const { user_add, message, update_notification } =
+export const { user_add, message, update_notification, logout } =
   user_data_slice.actions
