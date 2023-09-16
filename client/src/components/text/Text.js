@@ -13,6 +13,7 @@ import { findUserdetails } from "../../func/find_chats.js"
 import { useUpdate } from "./func/update.js"
 import socket from "../../func/socket"
 import useType from "./func/type.js"
+import { useChange } from "../home/func/useChange.js"
 
 const Text = () => {
   const payload = useLocation().state,
@@ -25,6 +26,9 @@ const Text = () => {
     [status, set_status] = useState(false),
     [emit_con, set_emit_con] = useState(false)
   const input_ref = useRef()
+
+  // ! screen change
+  useChange()
 
   // ! typing
 
