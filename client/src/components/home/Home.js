@@ -24,7 +24,7 @@ const Home = () => {
     loc = useLocation()
   const user_data = useSelector(ud)
   const dispatch = useDispatch()
-  useChange("home")
+  useChange()
   useEffect(() => {
     if (status === "ideal") {
       dispatch(fetch_data())

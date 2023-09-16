@@ -26,12 +26,6 @@ const Text = () => {
     [emit_con, set_emit_con] = useState(false)
   const input_ref = useRef()
 
-  // ! screen change
-  useEffect(() => {
-    document.getElementsByClassName(
-      "text-bg"
-    )[0].style.height = `${window.innerHeight}px`
-  }, [])
   // ! typing
 
   useType(find_user.current, payload.email_id)

@@ -1,10 +1,11 @@
 import { useEffect } from "react"
 
-export const useChange = (name) => {
+export const useChange = () => {
   useEffect(() => {
     const func = () => {
       const height = window.innerHeight
-      document.getElementsByClassName(name)[0].style.height = `${height}px`
+      document.getElementsByClassName("home")[0].style.height = `${height}px`
+      console.log(height)
     }
     func()
     window.addEventListener("resize", func)
