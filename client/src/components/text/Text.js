@@ -13,7 +13,6 @@ import { findUserdetails } from "../../func/find_chats.js"
 import { useUpdate } from "./func/update.js"
 import socket from "../../func/socket"
 import useType from "./func/type.js"
-import { useChange } from "../home/func/useChange.js"
 
 const Text = () => {
   const payload = useLocation().state,
@@ -28,8 +27,11 @@ const Text = () => {
   const input_ref = useRef()
 
   // ! screen change
-  useChange("text-bg")
-
+  useEffect(() => {
+    document.getElementsByClassName(
+      "text-bg"
+    )[0].style.height = `${window.innerHeight}px`
+  }, [])
   // ! typing
 
   useType(find_user.current, payload.email_id)
