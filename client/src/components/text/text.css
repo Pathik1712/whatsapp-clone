@@ -17,9 +17,15 @@
   border-left: 1px solid var(--chat-border);
   border-right: 1px solid var(--chat-border);
 }
+@media (max-width: 550px) {
+  .text-body {
+    border: none;
+  }
+}
 /* !header */
 .text-body > header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.5rem 3rem auto;
   align-items: center;
   position: sticky;
   top: 0;
@@ -39,6 +45,7 @@
   text-overflow: ellipsis;
 }
 .nav-header > div {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 5px;

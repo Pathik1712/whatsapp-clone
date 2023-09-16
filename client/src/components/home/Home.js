@@ -17,12 +17,14 @@ import {
 } from "../../data/slice/user_data.js"
 import Adduser from "../add_user/Adduser"
 import socket from "../../func/socket"
+import { useChange } from "./func/useChange.js"
 
 const Home = () => {
   const status = useSelector(user_status),
     loc = useLocation()
   const user_data = useSelector(ud)
   const dispatch = useDispatch()
+  useChange()
   useEffect(() => {
     if (status === "ideal") {
       dispatch(fetch_data())

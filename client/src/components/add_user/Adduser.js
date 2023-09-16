@@ -10,6 +10,15 @@ const Adduser = () => {
   const [take_input, set_input] = useState(""),
     [data, set_data] = useState(null)
   useEffect(() => {
+    const func = async () => {
+      try {
+        const res = await axios.get(process.env.REACT_APP_URL + "home/suggest")
+        set_data(res.data)
+      } catch {}
+    }
+    func()
+  }, [])
+  useEffect(() => {
     let controller = new AbortController()
     if (take_input !== "") {
       const handlesubmit = async () => {

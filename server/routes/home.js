@@ -81,4 +81,8 @@ router.patch("/profile", multer().any(), async (req, res) => {
     res.sendStatus(404)
   }
 })
+router.get("/suggest", async (req, res) => {
+  const suggest = await usermodel.find().limit(5)
+  res.send(suggest)
+})
 export { router as home }
