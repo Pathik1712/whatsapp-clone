@@ -28,7 +28,7 @@ const Text = () => {
   const input_ref = useRef()
 
   // ! screen change
-  useChange()
+  useChange("text-bg")
 
   // ! typing
 
