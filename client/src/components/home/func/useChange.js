@@ -3,12 +3,12 @@ import { useEffect } from "react"
 export const useChange = () => {
   useEffect(() => {
     const func = () => {
-      const height = window.innerHeight
+      let height = window.innerHeight
       document.getElementsByClassName("home")[0].style.height = `${height}px`
-      console.log(height)
+      console.log("hi")
     }
     func()
     window.addEventListener("resize", func)
-    return window.removeEventListener("resize", func)
+    return () => window.removeEventListener("resize", func)
   }, [])
 }
